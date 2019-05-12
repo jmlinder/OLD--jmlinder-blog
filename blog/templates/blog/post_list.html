@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div>
-      <h1><a href="/">Joe's Blog</a></h1>
-    </div>
-    {% for post in posts %}
-    <div>
-      <h1>{{ post.title }}</h1>
-      <p>{{ post.text }}</p>
-      <p>published: {{ post.published_date }}</p>
-    </div>
-    {% endfor %}
-  </body>
-</html>
+{% extends 'blog/base.html' %} {% block content %}
+<div class="container">
+  <div>
+    <h1 class="header">Joe's Blog</h1>
+    <hr />
+  </div>
+  {% for post in posts %}
+  <div>
+    <h1 class="title">
+      <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+    </h1>
+    <p class="post">{{ post.text }}</p>
+    <p class="author">
+      written by {{ post.author }} on {{ post.published_date }}
+    </p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
