@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "blog"
+		},
+		{
+			"path": "mysite"
+		}
+	],
+	"settings": {
+		"python.venvPath": "${workspaceFolder}",
+		"python.pythonPath": "/Users/JoeLinder/Desktop/Coding/WebDev/jmlinder/mysite/.venv/bin/python"
+	}
+}
